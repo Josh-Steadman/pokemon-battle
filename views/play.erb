@@ -1,5 +1,5 @@
  
-
+  <% if @game.player_2.hit_points != 0 %>
  <%= @game.player_1.name %> vs  <%= @game.player_2.name %>
   
  <p> <%= @game.player_1.name %>: <%=@game.player_1.hit_points %>hp</p>
@@ -9,3 +9,6 @@
  <form action='/attack'>
    <input type='submit' value='Attack'>
  </form>
+  <% else %>
+  <h1>Winner is <%=@game.player_1.name %>!!
+  <%end %>
